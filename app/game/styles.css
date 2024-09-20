@@ -1,0 +1,149 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+html,
+body {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: "VT323", sans-serif;
+  background-size: 180px 180px, auto;
+  background-attachment: fixed;
+  user-select: none;
+  touch-action: pan-y;
+  -webkit-tap-highlight-color: transparent;
+  margin: 0;
+  padding: 0;
+}
+
+#app {
+  contain: layout style;
+  overflow: visible;
+}
+
+/* Additional styles for page */
+.page-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 20px;
+  background-color: #2c8f1f;
+  /* Background color for the page */
+}
+
+.roulette-wheel-wrapper {
+  margin-bottom: 20px;
+}
+
+.controls {
+  text-align: center;
+}
+
+.spin-button {
+  padding: 10px 20px;
+  font-size: 18px;
+  background-color: #007bff;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.spin-button:hover {
+  background-color: #0056b3;
+}
+
+.roulette-wheel {
+  float: right;
+  width: 380px;
+  height: 380px;
+  border-radius: 100%;
+  background: url(/assets/roulette_1.jpg);
+  background-size: 380px 380px;
+  shape-outside: circle(190px);
+  margin: 0 0 1em 1em;
+  box-shadow: 2px 10px 30px rgba(0, 0, 0, 0.4);
+  position: relative;
+  touch-action: pan-y;
+  overflow: visible;
+}
+
+@media screen and (max-width: 2640px) {
+  .roulette-wheel {
+    float: none;
+    margin: 1em auto;
+  }
+}
+
+@media screen and (max-width: 375px) {
+  body {
+    padding: 0 20px;
+  }
+
+  .roulette-wheel {
+    float: none;
+    left: 30px;
+  }
+}
+
+.roulette-wheel .layer-2,
+.roulette-wheel .layer-3,
+.roulette-wheel .layer-4,
+.roulette-wheel .layer-5,
+.ball-container {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 380px 380px;
+}
+
+.roulette-wheel .layer-2,
+.roulette-wheel .layer-4,
+.ball-container {
+  will-change: transform;
+}
+
+.roulette-wheel .layer-2 {
+  background-image: url(/assets/roulette_2.png);
+}
+
+.roulette-wheel .layer-3 {
+  background-image: url(/assets/roulette_3.png);
+}
+
+.roulette-wheel .layer-4 {
+  background-image: url(/assets/roulette_4.png);
+}
+
+.roulette-wheel .layer-5 {
+  background-image: url(/assets/roulette_5.png);
+}
+
+.roulette-wheel svg {
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.roulette-wheel circle {
+  cursor: pointer;
+  fill: transparent;
+}
+
+.roulette-wheel .ball {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  border-radius: 7px;
+  background: #fff radial-gradient(circle at 5px 5px, #fff, #444);
+  box-shadow: 1px 1px 4px #000;
+  transform: translateY(-116px);
+  top: 50%;
+  left: 50%;
+  margin: -7px;
+  will-change: transform;
+}
